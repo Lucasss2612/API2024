@@ -6,11 +6,8 @@ const gameSchema = new mongoose.Schema({
   price: { type: Number, required: true },
   description: { type: String, required: true },
   developer: { type: String, required: true },
-  systemRequirements: {
-    min: { type: String },
-    recommended: { type: String }
-  },
-  ratings: [{ type: Number }],
+  systemRequirements: { min: String, recommended: String },
+  ratings: [Number],
   comments: [{ user: String, comment: String }]
 });
 
