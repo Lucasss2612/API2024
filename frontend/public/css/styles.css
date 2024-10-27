@@ -1,7 +1,81 @@
+/* Estilos generales */
 body {
-    background-color: #f3f4f6;
-  }
-  .card {
-    border-radius: 10px;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #4a00e0, #8e2de2);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Contenedor general */
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+/* Tarjeta de login */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  color: #333;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  text-align: center;
+  color: #4a00e0;
+}
+
+/* Input del formulario */
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: #4a00e0;
+  outline: none;
+}
+
+/* Botón de envío */
+.btn-primary {
+  background-color: #4a00e0;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #8e2de2;
+}
+
+/* Enlaces */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ddd;
+}

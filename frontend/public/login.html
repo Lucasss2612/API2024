@@ -1,17 +1,52 @@
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card p-5 shadow-lg" style="width: 20rem;">
       <h2 class="text-center mb-4">Iniciar Sesión</h2>
-      <form>
+      <form id="loginForm">
         <div class="mb-3">
           <label for="email" class="form-label">Correo Electrónico</label>
-          <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo">
+          <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo" required>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="password" placeholder="Contraseña">
+          <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
         </div>
         <button type="submit" class="btn btn-primary w-100">Ingresar</button>
       </form>
     </div>
   </div>
   
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+  
+      try {
+        const response = await fetch("http://localhost:5000/api/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
+  
+        if (response.ok) {
+          const data = await response.json();
+          localStorage.setItem("token", data.token); // Guarda el token en localStorage
+          alert("Inicio de sesión exitoso");
+          window.location.href = "index.html"; // Redirige a la página de inicio
+        } else {
+          alert("Error de autenticación");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Ocurrió un problema en el servidor.");
+      }
+    });
+  </script>
+<nav>
+  <a href="index.html">Inicio</a> |
+  <a href="register.html">Registro</a> |
+  <a href="game-detail.html">Detalle del Videojuego</a> |
+  <a href="wishlist.html">Lista de Deseos</a> |
+  <a href="checkout.html">Compra</a>
+  <a href="login.html">Iniciar Sesión</a> |
+</nav>
