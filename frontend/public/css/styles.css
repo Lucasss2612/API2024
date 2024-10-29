@@ -1,29 +1,56 @@
-/* Estilos generales */
+/* Estilos Generales */
 body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #4a00e0, #8e2de2);
-  color: #fff;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background: #f3f4f6;
+  color: #333;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #4a00e0;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: #8e2de2;
+  padding: 10px;
+  gap: 20px;
 }
 
-/* Contenedor general */
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #ddd;
+}
+
+/* Contenido Principal */
 .container {
-  width: 100%;
-  max-width: 400px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
 }
 
-/* Tarjeta de login */
+/* Tarjetas */
 .card {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 30px;
+  max-width: 400px;
+  margin: 20px;
   color: #333;
   transition: transform 0.3s;
 }
@@ -32,26 +59,7 @@ body {
   transform: scale(1.05);
 }
 
-h2 {
-  text-align: center;
-  color: #4a00e0;
-}
-
-/* Input del formulario */
-.form-control {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 15px;
-  transition: border-color 0.3s;
-}
-
-.form-control:focus {
-  border-color: #4a00e0;
-  outline: none;
-}
-
-/* Botón de envío */
+/* Botón */
 .btn-primary {
   background-color: #4a00e0;
   border: none;
@@ -59,23 +67,27 @@ h2 {
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
-  width: 100%;
   color: #fff;
   transition: background-color 0.3s;
+  width: 100%;
+  text-align: center;
 }
 
 .btn-primary:hover {
   background-color: #8e2de2;
 }
 
-/* Enlaces */
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
+/* Formularios */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s;
 }
 
-nav a:hover {
-  color: #ddd;
+.form-control:focus {
+  border-color: #4a00e0;
+  outline: none;
 }

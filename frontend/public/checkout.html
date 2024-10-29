@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compra de Videojuego</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra - Marketplace de Videojuegos</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav>
-        <a href="index.html">Inicio</a> |
-        <a href="register.html">Registro</a> |
-        <a href="game-detail.html">Detalle del Videojuego</a> |
-        <a href="wishlist.html">Lista de Deseos</a> |
-        <a href="checkout.html">Compra</a>
-        <a href="login.html">Iniciar Sesión</a> |
+    <header>
+        <h1>Marketplace de Videojuegos</h1>
+    </header>
+    <nav class="navbar">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Iniciar Sesión</a>
+        <a href="register.html">Registrarse</a>
+        <a href="wishlist.html">Lista de Deseos</a>
     </nav>
-    <h2>Compra de Videojuego</h2>
-    <form>
-        <input type="text" placeholder="Nombre del titular de la tarjeta">
-        <input type="text" placeholder="Número de tarjeta">
-        <input type="text" placeholder="Fecha de expiración">
-        <input type="text" placeholder="CVV">
-        <button type="submit">Completar Compra</button>
-    </form>
+    <div class="container">
+        <div class="card">
+            <h2>Proceso de Compra</h2>
+            <form>
+                <input type="text" class="form-control" placeholder="Nombre del titular" required>
+                <input type="text" class="form-control" placeholder="Número de tarjeta" required>
+                <input type="text" class="form-control" placeholder="Fecha de expiración" required>
+                <input type="text" class="form-control" placeholder="CVV" required>
+                <button type="submit" class="btn-primary">Completar Compra</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

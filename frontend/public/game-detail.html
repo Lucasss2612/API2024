@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalle del Videojuego</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Videojuego - Marketplace de Videojuegos</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav>
-        <a href="index.html">Inicio</a> |
-        <a href="register.html">Registro</a> |
-        <a href="game-detail.html">Detalle del Videojuego</a> |
-        <a href="wishlist.html">Lista de Deseos</a> |
-        <a href="checkout.html">Compra</a>
-        <a href="login.html">Iniciar Sesión</a> |
+    <header>
+        <h1>Marketplace de Videojuegos</h1>
+    </header>
+    <nav class="navbar">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Iniciar Sesión</a>
+        <a href="register.html">Registrarse</a>
+        <a href="wishlist.html">Lista de Deseos</a>
     </nav>
-    <h2>Nombre del Videojuego</h2>
-    <p>Descripción del videojuego...</p>
-    <p>Precio: $<span id="precio"></span></p>
-    <p>Calificación: <span id="calificacion"></span></p>
+    <div class="container">
+        <div class="card">
+            <h2>Nombre del Videojuego</h2>
+            <p>Descripción detallada del videojuego.</p>
+            <p><strong>Precio:</strong> $XX.XX</p>
+            <button class="btn-primary">Añadir a la Lista de Deseos</button>
+            <a href="checkout.html" class="btn-primary">Comprar Ahora</a> <!-- Botón de compra -->
+        </div>
+    </div>
+    
 </body>
 </html>

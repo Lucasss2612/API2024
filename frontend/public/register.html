@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro de Usuario</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Marketplace de Videojuegos</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>    
-    <nav>
-        <a href="index.html">Inicio</a> |
-        <a href="register.html">Registro</a> |
-        <a href="game-detail.html">Detalle del Videojuego</a> |
-        <a href="wishlist.html">Lista de Deseos</a> |
-        <a href="checkout.html">Compra</a>
-        <a href="login.html">Iniciar Sesión</a> |
+<body>
+    <header>
+        <h1>Marketplace de Videojuegos</h1>
+    </header>
+    <nav class="navbar">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Iniciar Sesión</a>
+        <a href="register.html">Registrarse</a>
+        <a href="wishlist.html">Lista de Deseos</a>
     </nav>
-    <h2>Registro de Usuario</h2>
-    <form>
-        <input type="text" placeholder="Nombre y Apellido">
-        <input type="email" placeholder="Correo">
-        <input type="password" placeholder="Contraseña">
-        <input type="date" placeholder="Fecha de Nacimiento">
-        <button type="submit">Registrarse</button>
-    </form>
-</body>
-</html>
+    <div class="container">
+        <div class="card">
+            <h2>Registrarse</h2>
+            <form>
+                <input type="text" class="form-control" placeholder="Nombre Completo" required>
+                <input type="email" class="form-control" placeholder="Correo Electrónico" required>
+                <input type="password" class="form-control" placeholder="Contraseña" required>
+                <input type="date" class="form-control" required>
+                
