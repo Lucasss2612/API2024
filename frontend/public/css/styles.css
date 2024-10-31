@@ -53,6 +53,7 @@ header {
   margin: 20px;
   color: #333;
   transition: transform 0.3s;
+  display: flexbox;
 }
 
 .card:hover {
@@ -90,4 +91,15 @@ header {
 .form-control:focus {
   border-color: #4a00e0;
   outline: none;
+}
+.game-list {
+  display: flex;
+}
+
+.requisitos-grid {
+  display: flex;
+  gap: 20px;
+}
+.requisitos-grid div {
+  flex: 1;
 }

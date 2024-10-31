@@ -7,21 +7,38 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav>
+    <header>
+        <h1>Marketplace de Videojuegos</h1>
+    </header>
+    <nav class="navbar">
+        <a href="index.html">Inicio</a>
+        <a href="games.html">Explorar Juegos</a>
         <a href="login.html">Iniciar Sesión</a>
         <a href="register.html">Registrarse</a>
-        <a href="wishlist.html">Mi Lista de Deseos</a>
+        <a href="wishlist.html">Lista de Deseos</a>
     </nav>
-    <header>
-        <h1>Bienvenido a Marketplace de Videojuegos</h1>
-        <p>Encuentra, compra y disfruta de tus videojuegos favoritos.</p>
-        <a href="games.html" class="btn-primary">Explorar Videojuegos</a>
-    </header>
-    <section>
-        <h2>Videojuegos Destacados</h2>
-        <div class="featured-games">
-            <!-- Juegos destacados (puedes agregar imágenes o enlaces a los juegos) -->
-        </div>
-    </section>
+    <div class="container">
+        <section class="hero">
+            <h2>Bienvenido al mejor sitio para gamers</h2>
+            <p>Explora nuestra colección y encuentra los mejores videojuegos del mercado.</p>
+            <a href="games.html" class="btn-primary">Explorar Videojuegos</a>
+        </section>
+        <section class="featured">
+            <h2>Videojuegos Destacados</h2>
+            <div class="game-list">
+                <div class="card">
+                    <h3>Juego 1</h3>
+                    <p>Acción | $49.99</p>
+                    <a href="game-detail.html?id=juego1" class="btn-primary">Ver Detalles</a>
+                </div>
+                <div class="card">
+                    <h3>Juego 2</h3>
+                    <p>Aventura | $39.99</p>
+                    <a href="game-detail.html?id=juego2" class="btn-primary">Ver Detalles</a>
+                </div>
+                <!-- Agrega más tarjetas de juegos destacados -->
+            </div>
+        </section>
+    </div>
 </body>
 </html>

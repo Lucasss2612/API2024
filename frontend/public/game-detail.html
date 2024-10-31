@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle del Videojuego - Marketplace de Videojuegos</title>
+    <title>Detalle del Videojuego</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -12,19 +12,105 @@
     </header>
     <nav class="navbar">
         <a href="index.html">Inicio</a>
-        <a href="login.html">Iniciar Sesión</a>
-        <a href="register.html">Registrarse</a>
-        <a href="wishlist.html">Lista de Deseos</a>
+        <a href="games.html">Juegos</a>
     </nav>
     <div class="container">
-        <div class="card">
-            <h2>Nombre del Videojuego</h2>
-            <p>Descripción detallada del videojuego.</p>
-            <p><strong>Precio:</strong> $XX.XX</p>
-            <button class="btn-primary">Añadir a la Lista de Deseos</button>
-            <a href="checkout.html" class="btn-primary">Comprar Ahora</a> <!-- Botón de compra -->
+        <div class="card" id="game-details">
+            <h2 id="game-title">Nombre del Videojuego</h2>
+            <p id="game-description">Descripción...</p>
+            
+            <div id="requisitos">
+                <h3>Requisitos</h3>
+                <div class="requisitos-grid">
+                    <div>
+                        <p><strong>Mínimos:</strong></p>
+                        <p><strong>Sistema Operativo:</strong> <span id="os-min"></span></p>
+                        <p><strong>Inputs:</strong> <span id="inputs-min"></span></p>
+                        <p><strong>Conexión a Internet:</strong> <span id="internet-min"></span></p>
+                        <p><strong>CPU:</strong> <span id="cpu-min"></span></p>
+                        <p><strong>GPU:</strong> <span id="gpu-min"></span></p>
+                        <p><strong>RAM:</strong> <span id="ram-min"></span></p>
+                        <p><strong>Espacio en Disco:</strong> <span id="disk-min"></span></p>
+                    </div>
+                    <div>
+                        <p><strong>Recomendados:</strong></p>
+                        <p><strong>Sistema Operativo:</strong> <span id="os-rec"></span></p>
+                        <p><strong>Inputs:</strong> <span id="inputs-rec"></span></p>
+                        <p><strong>Conexión a Internet:</strong> <span id="internet-rec"></span></p>
+                        <p><strong>CPU:</strong> <span id="cpu-rec"></span></p>
+                        <p><strong>GPU:</strong> <span id="gpu-rec"></span></p>
+                        <p><strong>RAM:</strong> <span id="ram-rec"></span></p>
+                        <p><strong>Espacio en Disco:</strong> <span id="disk-rec"></span></p>
+                    </div>
+                </div>
+            </div>
+            <p><strong>Precio:</strong> <span id="game-price"></span></p>
+            <a href="checkout.html" class="btn-primary">Pagar</a>
         </div>
     </div>
     
+    <script>
+        // Obtén el parámetro ID de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameId = urlParams.get('id');
+
+        // Información de juegos
+        const gamesData = {
+            juego1: { 
+                title: "Juego 1", 
+                description: "Descripción del Juego 1", 
+                price: "$49.99",
+                requisitos: {
+                    min: {
+                        os: "Windows 10",
+                        inputs: "Teclado y ratón",
+                        internet: "Requerido",
+                        cpu: "Intel Core i5",
+                        gpu: "NVIDIA GTX 1050",
+                        ram: "8 GB",
+                        disk: "50 GB"
+                    },
+                    rec: {
+                        os: "Windows 10, macOS",
+                        inputs: "Controlador compatible",
+                        internet: "Requerido",
+                        cpu: "Intel Core i7",
+                        gpu: "NVIDIA GTX 1660",
+                        ram: "16 GB",
+                        disk: "70 GB"
+                    }
+                }
+            },
+            // Agrega más juegos aquí
+        };
+
+        // Cargar datos del juego en la página
+        if (gamesData[gameId]) {
+            const game = gamesData[gameId];
+            document.getElementById("game-title").textContent = game.title;
+            document.getElementById("game-description").textContent = game.description;
+            document.getElementById("game-price").textContent = game.price;
+
+            // Requisitos mínimos
+            document.getElementById("os-min").textContent = game.requisitos.min.os;
+            document.getElementById("inputs-min").textContent = game.requisitos.min.inputs;
+            document.getElementById("internet-min").textContent = game.requisitos.min.internet;
+            document.getElementById("cpu-min").textContent = game.requisitos.min.cpu;
+            document.getElementById("gpu-min").textContent = game.requisitos.min.gpu;
+            document.getElementById("ram-min").textContent = game.requisitos.min.ram;
+            document.getElementById("disk-min").textContent = game.requisitos.min.disk;
+
+            // Requisitos recomendados
+            document.getElementById("os-rec").textContent = game.requisitos.rec.os;
+            document.getElementById("inputs-rec").textContent = game.requisitos.rec.inputs;
+            document.getElementById("internet-rec").textContent = game.requisitos.rec.internet;
+            document.getElementById("cpu-rec").textContent = game.requisitos.rec.cpu;
+            document.getElementById("gpu-rec").textContent = game.requisitos.rec.gpu;
+            document.getElementById("ram-rec").textContent = game.requisitos.rec.ram;
+            document.getElementById("disk-rec").textContent = game.requisitos.rec.disk;
+        } else {
+            document.getElementById("game-details").innerHTML = "<p>Juego no encontrado.</p>";
+        }
+    </script>
 </body>
 </html>
