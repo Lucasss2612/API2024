@@ -1,5 +1,106 @@
+/* Estilos Generales */
 body {
-    background-color: violet;
-    color: white;
     font-family: Arial, sans-serif;
-}
+    margin: 0;
+    padding: 0;
+    background: #f3f4f6;
+    color: #333;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4a00e0;
+    color: #fff;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #8e2de2;
+    padding: 10px;
+    gap: 20px;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #ddd;
+  }
+  
+  /* Contenido Principal */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  
+  /* Tarjetas */
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 400px;
+    margin: 20px;
+    color: #333;
+    transition: transform 0.3s;
+    display: flexbox;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Botón */
+  .btn-primary {
+    background-color: #4a00e0;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .btn-primary:hover {
+    background-color: #8e2de2;
+  }
+  
+  /* Formularios */
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s;
+  }
+  
+  .form-control:focus {
+    border-color: #4a00e0;
+    outline: none;
+  }
+  .game-list {
+    display: flex;
+  }
+  
+  .requisitos-grid {
+    display: flex;
+    gap: 20px;
+  }
+  .requisitos-grid div {
+    flex: 1;
+  }
+  
