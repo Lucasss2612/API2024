@@ -16,6 +16,12 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/" component={HomePage} exact />
+          <Route path="/" component={LoginPage} exact />
+          <Route path="/" component={RegisterPage} exact />
+          <Route path="/" component={GameDetailPage} exact />
+          <Route path="/" component={CheckoutPage} exact />
+          <Route path="/" component={WishlistPage} exact />
+          <Route path="/" component={VendorDashboard} exact />
           {/* Otras rutas pueden añadirse aquí */}
         </Switch>
       </div>
