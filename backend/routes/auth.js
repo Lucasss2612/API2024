@@ -1,15 +1,15 @@
 // backend/routes/auth.js
-const express = require('express');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const User = require('../models/User'); // Asegúrate de tener un modelo de usuario definido
-const router = express.Router();
+import { Router } from 'express';
+import { hash, compareSync } from 'bcrypt';
+import { sign } from 'jsonwebtoken';
+import User, { findOne } from '../models/User'; // Asegúrate de tener un modelo de usuario definido
+const router = Router();
 
 // Registro de usuario
 router.post('/register', async (req, res) => {
     const { username, email, password, role } = req.body;
     try {
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = await hash(password, 10);
         const user = new User({ username, email, password: hashedPassword, role });
         await user.save();
         res.status(201).json({ message: 'Usuario registrado exitosamente' });
@@ -22,9 +22,9 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
     try {
-        const user = await User.findOne({ email });
-        if (user && bcrypt.compareSync(password, user.password)) {
-            const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        const user = await findOne({ email });
+        if (user && compareSync(password, user.password)) {
+            const token = sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
             res.json({ token, role: user.role });
         } else {
             res.status(401).json({ message: 'Credenciales incorrectas' });
@@ -34,4 +34,4 @@ router.post('/login', async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;

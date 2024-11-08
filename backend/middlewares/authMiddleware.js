@@ -1,5 +1,5 @@
 // backend/middlewares/authMiddleware.js
-const jwt = require('jsonwebtoken');
+import { verify } from 'jsonwebtoken';
 
 const authMiddleware = (req, res, next) => {
     const token = req.header('Authorization')?.replace('Bearer ', '');
@@ -7,7 +7,7 @@ const authMiddleware = (req, res, next) => {
     if (!token) return res.status(401).json({ message: 'Acceso denegado' });
 
     try {
-        const verified = jwt.verify(token, process.env.JWT_SECRET);
+        const verified = verify(token, process.env.JWT_SECRET);
         req.user = verified;
         next();
     } catch (error) {
@@ -15,4 +15,4 @@ const authMiddleware = (req, res, next) => {
     }
 };
 
-module.exports = authMiddleware;
+export default authMiddleware;
