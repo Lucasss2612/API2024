@@ -1,11 +1,12 @@
-import { Router } from 'express';
-const router = Router();
-import { registerGame, getGameStats, editGame, deleteGame } from '../controllers/vendorController';
-import authMiddleware from '../middlewares/authMiddleware';
+const express = require('express');
+const router = express.Router();
+const vendorController = require('../controllers/vendorController');
+const authMiddleware = require('../middlewares/authMiddleware');
 
-router.post('/games', authMiddleware, registerGame);
-router.get('/games/stats', authMiddleware, getGameStats);
-router.put('/games/:id', authMiddleware, editGame);
-router.delete('/games/:id', authMiddleware, deleteGame);
+// Ejemplo de ruta protegida
+router.post('/games', authMiddleware, vendorController.registerGame);
+router.get('/games/stats', authMiddleware, vendorController.getGameStats);
+router.put('/games/:id', authMiddleware, vendorController.editGame);
+router.delete('/games/:id', authMiddleware, vendorController.deleteGame);
 
-export default router;
+module.exports = router;

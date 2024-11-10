@@ -1,4 +1,5 @@
-import { Schema, model } from 'mongoose';
+const mongoose = require('mongoose');
+const { Schema, model } = mongoose;
 
 const gameSchema = new Schema({
   name: { type: String, required: true },
@@ -11,4 +12,4 @@ const gameSchema = new Schema({
   comments: [{ user: String, comment: String }]
 });
 
-export default model('Game', gameSchema);
+module.exports = model('Game', gameSchema);
